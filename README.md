@@ -45,7 +45,7 @@ Then import your code using:
 ``` ts 
 import makeWASocket from 'alan/baileys'
 ```
-atau
+or
 ```ts
 const { 
     default: makeWASocket, 
