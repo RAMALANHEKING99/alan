@@ -30,24 +30,19 @@ Do check out & run [example.ts](Example/example.ts) to see an example usage of t
 The script covers most common use cases.
 To run the example script, download or clone the repo and then type the following in a terminal:
 1. ``` cd path/to/Baileys ```
-2. ``` yarn or npm ```
-3. ``` yarn example ```
+2. ``` npm```
 
 ## Install
 
 Use the stable version:
 ```
-yarn add alan/baileys
+npm i alan-baileys
 ```
 
-Use the edge version (no guarantee of stability, but latest fixes + features)
-```
-yarn add github:alan/Baileys
-```
 
 Then import your code using:
 ``` ts 
-import makeWASocket from 'alan/baileys'
+import makeWASocket from 'alan-baileys'
 ```
 or
 ```ts
@@ -56,7 +51,7 @@ const {
     useMultiFileAuthState, 
     downloadMediaMessage,
     dll
-} = require('alan/baileys');
+} = require('alan-baileys');
 ```
 
 ## Unit Tests
@@ -68,7 +63,7 @@ TODO
 WhatsApp provides a multi-device API that allows Baileys to be authenticated as a second WhatsApp client by scanning a QR code with WhatsApp on your phone.
 
 ``` ts
-import makeWASocket, { DisconnectReason } from 'alan/baileys'
+import makeWASocket, { DisconnectReason } from 'alan-baileys'
 import { Boom } from '@hapi/boom'
 
 async function connectToWhatsApp () {
@@ -206,7 +201,7 @@ You obviously don't want to keep scanning the QR code every time you want to con
 
 So, you can load the credentials to log back in:
 ``` ts
-import makeWASocket, { BufferJSON, useMultiFileAuthState } from 'alan/baileys'
+import makeWASocket, { BufferJSON, useMultiFileAuthState } from 'alan-baileys'
 import * as fs from 'fs'
 
 // utility function to help save the auth state in a single folder
@@ -321,7 +316,7 @@ Baileys does not come with a defacto storage for chats, contacts, or messages. H
 It can be used as follows:
 
 ``` ts
-import makeWASocket, { makeInMemoryStore } from 'alan/baileys'
+import makeWASocket, { makeInMemoryStore } from 'alan-baileys'
 // the store maintains the data of the WA connection in memory
 // can be written out to a file & read from it
 const store = makeInMemoryStore({ })
@@ -360,7 +355,7 @@ The store also provides some simple functions such as `loadMessages` that utiliz
 ### Non-Media Messages
 
 ``` ts
-import { MessageType, MessageOptions, Mimetype } from 'alan/baileys'
+import { MessageType, MessageOptions, Mimetype } from 'alan-baileys'
 
 const id = 'abcd@s.whatsapp.net' // the WhatsApp ID 
 // send a simple text!
@@ -419,7 +414,7 @@ Sending media (video, stickers, images) is easier & more efficient than ever.
 - When specifying a media url, Baileys never loads the entire buffer into memory; it even encrypts the media as a readable stream.
 
 ``` ts
-import { MessageType, MessageOptions, Mimetype } from 'alan/baileys'
+import { MessageType, MessageOptions, Mimetype } from 'alan-baileys'
 // Sending gifs
 await sock.sendMessage(
     id, 
@@ -468,7 +463,7 @@ await sock.sendMessage(
                                     Do not enter this field if you want to automatically generate a thumb
                                 */
         mimetype: Mimetype.pdf, /* (for media messages) specify the type of media (optional for all media types except documents),
-                                    import {Mimetype} from 'alan/baileys'
+                                    import {Mimetype} from 'alan-baileys'
                                 */
         fileName: 'somefile.pdf', // (for media messages) file name for the media
         /* will send audio messages as voice notes, if set to true */
@@ -527,7 +522,7 @@ The presence expires after about 10 seconds.
 If you want to save the media you received
 ``` ts
 import { writeFile } from 'fs/promises'
-import { downloadMediaMessage } from 'alan/baileys'
+import { downloadMediaMessage } from 'alan-baileys'
 
 sock.ev.on('messages.upsert', async ({ messages }) => {
     const m = messages[0]
