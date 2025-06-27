@@ -1,7 +1,7 @@
 # Baileys - Typescript/Javascript WhatsApp Web API
 
 <p align="center">
-  <img src="./lib/alanhah.jpg" alt="Thumbnail" />
+  <img src="https://github.com/RAMALANHEKING99/RAMALANHEKING99/blob/main/alan1.jpeg" alt="Thumbnail" />
 </p>
 
 ### Important Note
