@@ -1,5 +1,9 @@
 # Baileys - Typescript/Javascript WhatsApp Web API
 
+<p align="center">
+  <img src="./lib/alanhah.jpg" alt="Thumbnail" />
+</p>
+
 ### Important Note
 
 This library was originally a project for the **Alanstore bot** and is in no way affiliated with or endorsed by WhatsApp. Use at your own discretion. Do not spam people with this. We discourage any stalkerware, bulk or automated messaging usage. 
